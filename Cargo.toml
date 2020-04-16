@@ -1,0 +1,21 @@
+[package]
+name = "objc-util"
+version = "0.1.0"
+authors = ["Brainium Studios LLC"]
+edition = "2018"
+license = "Brainium-Proprietary"
+
+[features]
+compile-time = ["objc-macros/compile-time"]
+default = []
+
+[dependencies]
+lazy_static = "1.4.0"
+objc = "0.2.7"
+objc-macros = { path = "./objc-macros" }
+
+[dev-dependencies]
+test-lib = { path = "./test-lib" }
+
+[profile.release]
+lto="fat"
